@@ -1,0 +1,13 @@
+lead_record = zoho.crm.getRecordById("Leads",lId);
+
+//create new task
+subject = lead_record.get("First_Name") + " " + lead_record.get("Last_Name") + " has signed. notify them";
+dueDate = today.addDay(0);
+tMap = Map();
+tMap.put("$se_module","Leads");
+tMap.put("What_Id",lId);
+tMap.put("Subject",subject);
+tMap.put("Due_Date",dueDate);
+tMap.put("Status","Not Started");
+tMap.put("Priority","High");
+createResp = zoho.crm.createRecord("Tasks",tMap);
