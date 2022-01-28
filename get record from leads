@@ -1,0 +1,2 @@
+//get record 
+curl "https://www.zohoapis.com/crm/v2/Leads" -X GET -H "Authorization: Zoho-oauthtoken {access_token}"
