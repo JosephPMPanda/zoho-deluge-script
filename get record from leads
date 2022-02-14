@@ -1,2 +1,4 @@
 //get record 
-curl "https://www.zohoapis.com/crm/v2/Leads" -X GET -H "Authorization: Zoho-oauthtoken {access_token}"
+curl "https://www.zohoapis.com/crm/v2/Leads" -X GET -H "Authorization: Zoho-oauthtoken access_token_here"
+
+//if return error check change www.zohoapis.com to www.zohoapis.com.au or something else according to which data centre the account created
