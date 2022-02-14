@@ -1,4 +1,7 @@
 // https://www.zoho.com/crm/developer/docs/api/v2/access-refresh.html
 
 //generate access token
-curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=authorization_code&code={grant token}&client_id={client_id}&client_secret={client_secret}" https://accounts.zoho.com/oauth/v2/token
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=authorization_code&code=grant_token_here&client_id=client_id_here&client_secret=client_secret_here" https://accounts.zoho.com/oauth/v2/token
+
+//if return invalid_client, the data centre is wrong. change https://accounts.zoho.com/oauth/v2/token to https://accounts.zoho.com.au/oauth/v2/token or something else
+//if return invalid_code, the grant already expired, generate a new one
