@@ -1,0 +1,50 @@
+/**
+we have subform in quotation module, which we want to create a button that auto generate quote.
+we have generated template and we have mapped a sub-form named "sub_forms" in that template.
+*/
+
+getQuote = zoho.crm.getRecordById("Quotations",quoteId);
+quoteType = getQuote.get("Type_of_Quote");
+/*... get the rest of the field */
+
+/*begin get data from sub-form*/
+sub_forms = List();
+productDet = ifnull(getQuote.get("Quoted_Products"),"");
+for each  prod in productDet
+{
+	pname = prod.get("Product").get("name");
+	spec = prod.get("Specifications");
+	qty = prod.get("Quantity");
+	amount = prod.get("Amount");
+
+	info "name : " + pname;
+	info "spec : " + spec;
+	info "qty : " + qty;
+	info "amount : " + amount;
+
+	subform = Map();
+	subform.put("sub_forms.Product",prod.get("Product").get("name")); //here "sub_forms" is the name of the subform in the template
+	subform.put("sub_forms.Quantity",prod.get("Quantity"));
+	subform.put("sub_forms.Specifications",prod.get("Specifications"));
+	subform.put("sub_forms.Amount",prod.get("Amount"));
+	sub_forms.add(subform);
+}
+
+/*begin sending data to Zoho Writer*/
+mergeFields = {"data":{{"Contact_Name":contactName,"..the rest of the field","sub_forms":sub_forms}}};
+writerId = "9kjuyc849f0805cf64d70a981624e2cc9ffa7";
+mapData = Map();
+mapData.put("output_format","docx");
+mapData.put("filename","Battery Quote_" + contactName);
+mapData.put("merge_data",mergeFields);
+mergeDown = invokeurl
+[
+  url :"https://zohoapis.com.au/writer/api/v1/documents/" + writerId + "/merge/download"
+  type :POST
+  parameters:mapData
+  connection:"merge_writer"
+];
+info "Battery: " + mergeDown;
+attachFile = zoho.crm.attachFile("Quotations",quoteId,mergeDown);
+info "Battery: " + attachFile;
+return "Success";
