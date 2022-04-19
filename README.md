@@ -1,2 +1,2 @@
 # zoho-deluge-script
-collection of zoho deluge script
+documenting all deluge script I've known because Zoho documentations are confusing
