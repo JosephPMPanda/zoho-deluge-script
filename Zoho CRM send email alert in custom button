@@ -1,0 +1,44 @@
+//OpportunitiesId = 4821763000000406576;
+getRelatedScopeOfWork = zoho.crm.getRelatedRecords("Scope_of_Work12","Deals",OpportunitiesId);
+//info getRelatedScopeOfWork;
+emailRecipientList = List();
+for each  item in getRelatedScopeOfWork
+{
+	//info item.get("Scope_of_Work").get("id");
+	ScopeOfWorkId = item.get("Scope_of_Work").get("id");
+	getRelatedDBM = zoho.crm.getRelatedRecords("DBM1","Scope_of_Work",ScopeOfWorkId);
+	//info getRelatedDBM;
+	for each  item in getRelatedDBM
+	{
+		DBMId = item.get("DBM_Relate").get("id");
+		//info DBMId;
+		for each  item in DBMId
+		{
+			emailRecipientList.add(zoho.crm.getRecordById("DBM",DBMId).get("Email"));
+		}
+	}
+}
+emailRecipientList = emailRecipientList.distinct();
+info emailRecipientList;
+/*start of --------for testing purprose-------------------------*/
+testEmailRecipient = {"gaura@smartmates.com.au","adi@smartmates.com.au"};
+sendmail
+[
+	from :zoho.loginuserid
+	to :testEmailRecipient
+	cc:"oka@smartmates.com.au"
+	subject :"New Opportunities Alert"
+	message :"<div>There is a new Opportunities!<br></div>"
+]
+/*end of --------for testing purprose-------------------------*/
+/*
+sendmail
+[ 
+	from : zoho.loginuserid
+	to : emailRecipientList
+	cc : "Ian.Hindley@greenlightclinical.com"
+	subject: "New Opportunities Alert"
+	message : "<div>There is a new Opportunities!<br></div>"
+]
+*/
+return "";
