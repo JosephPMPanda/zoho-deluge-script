@@ -1,0 +1,179 @@
+SELECT
+		 "A"."Lead ID" as 'Lead ID',
+		 MAX("A"."Owner") as 'Owner',
+		 MAX("A"."Lead Generator") as 'Lead Generator',
+		 MAX("A"."Lead Created Time") as 'Lead Created Time',
+		 MAX("A"."Lead Source") as 'Lead Source',
+		 MAX("A"."Campaigns Name") as 'Campaigns Name',
+		 if(is_contains(MAX("A"."Lead Source"), 'SA')  = 1, 'SA', if(is_contains(MAX("A"."Lead Source"), 'QLD')  = 1, 'QLD', if(is_contains(MAX("A"."Lead Source"), 'WA')  = 1, 'WA', 'Unknown'))) as 'Area',
+		 if(is_contains(MAX("A"."Lead Source"), 'Facebook')  = 1, 'Facebook', if(is_contains(MAX("A"."Lead Source"), 'Google')  = 1, 'Google', if(is_contains(MAX("A"."Lead Source"), 'FB')  = 1, 'Facebook', if(is_contains(MAX("A"."Lead Source"), 'Internal Lead Gen.')  = 1, 'Internal Lead Gen', MAX("A"."Lead Source"))))) as 'Lead Source Filter',
+		 MAX("A"."Converted Time") as 'Converted Time',
+		 MAX("A"."Is Converted?") as 'Is Converted?',
+		 MAX("A"."Full Name") as 'Full Name',
+		 "A"."Contact ID" as 'Contact ID',
+		 MAX("A"."Opportunities ID") as 'Opportunities ID',
+		 MAX("A"."Opportunities Closing Date") as 'Opportunities Closing Date',
+		 MAX("A"."Days to Sale") as 'Days to Sale',
+		 MAX("A"."Amount") as 'Deal Amount',
+		 MAX("A"."Probability (%)") as 'Probability (%)',
+		 MAX("A"."Stage") as 'Stage',
+		 MAX("A"."Solar System Size") as 'Solar System Size',
+		 if(MAX("A"."Lead Created Time")  IS NOT NULL, 1, 0) as 'Lead Count',
+		 MAX("A"."Converted Count") as 'Converted Count',
+		 if(MAX("A"."Probability (%)")  = 100, 1, 0) as 'Sales Count',
+		 MAX("A"."KWp Sold") as 'KWp Sold',
+		 MAX("A"."Revenue") as 'Revenue',
+		 null as 'Spent',
+		 'CRM' as 'Source'
+FROM (/*leads data Lead module & Opportunities module in CRM*/
+	SELECT
+			 "Leads (Zoho CRM)"."Id" as 'Lead ID',
+			 "Leads (Zoho CRM)"."Lead Owner Name" as 'Owner',
+			 "Leads (Zoho CRM)"."Lead Generator" as 'Lead Generator',
+			 "Leads (Zoho CRM)"."Created Time" as 'Lead Created Time',
+			 "Leads (Zoho CRM)"."Lead Source" as 'Lead Source',
+			 null as 'Campaigns Name',
+			 "Leads (Zoho CRM)"."Converted Time" as 'Converted Time',
+			 "Leads (Zoho CRM)"."Is Converted?" as 'Is Converted?',
+			 "Leads (Zoho CRM)"."Full Name" as 'Full Name',
+			 "Leads (Zoho CRM)"."Converted Contact" as 'Contact ID',
+			 "Opportunities (Zoho CRM)"."Id" as 'Opportunities ID',
+			 "Opportunities (Zoho CRM)"."Closing Date" as 'Opportunities Closing Date',
+			 if("Opportunities (Zoho CRM)"."Probability (%)"  = 100, days_between("Leads (Zoho CRM)"."Created Time", "Opportunities (Zoho CRM)"."Closing Date"), null) as 'Days to Sale',
+			 "Opportunities (Zoho CRM)"."Amount" as 'Amount',
+			 "Opportunities (Zoho CRM)"."Probability (%)" as 'Probability (%)',
+			 "Opportunities (Zoho CRM)"."Stage" as 'Stage',
+			 "Opportunities (Zoho CRM)"."Solar System Size" as 'Solar System Size',
+			 if("Leads (Zoho CRM)"."Is Converted?"  = 'Yes', 1, 0) as 'Converted Count',
+			 if("Opportunities (Zoho CRM)"."Probability (%)"  = 100, 1, 0) as 'Sales Count',
+			 if("Opportunities (Zoho CRM)"."Probability (%)"  = 100, "Opportunities (Zoho CRM)"."Solar System Size", 0) as 'KWp Sold',
+			 if("Opportunities (Zoho CRM)"."Probability (%)"  = 100, "Opportunities (Zoho CRM)"."Amount", 0) as 'Revenue'
+	FROM  "Leads (Zoho CRM)"
+LEFT JOIN "Opportunities (Zoho CRM)" ON "Opportunities (Zoho CRM)"."Account Name"  = "Leads (Zoho CRM)"."Converted Account"  
+	UNION ALL
+ /*leads data Contact module & Opportunities module in CRM*/
+	SELECT
+			 null as 'Lead ID',
+			 "Contacts (Zoho CRM)"."Contact Owner Name" as 'Owner',
+			 "Contacts (Zoho CRM)"."Lead Generator" as 'Lead Generator',
+			 "Contacts (Zoho CRM)"."Created Time" as 'Lead Created Time',
+			 "Contacts (Zoho CRM)"."Lead Source" as 'Lead Source',
+			 null as 'Campaigns Name',
+			 "Contacts (Zoho CRM)"."Created Time" as 'Converted Time',
+			 null as 'Is Converted?',
+			 "Contacts (Zoho CRM)"."Full Name" as 'Full Name',
+			 "Contacts (Zoho CRM)"."Id" as 'Contact ID',
+			 "Opportunities (Zoho CRM)"."Id" as 'Opportunities ID',
+			 "Opportunities (Zoho CRM)"."Closing Date" as 'Opportunities Closing Date',
+			 if("Opportunities (Zoho CRM)"."Probability (%)"  = 100, days_between("Contacts (Zoho CRM)"."Created Time", "Opportunities (Zoho CRM)"."Closing Date"), null) as 'Days to Sale',
+			 "Opportunities (Zoho CRM)"."Amount" as 'Amount',
+			 "Opportunities (Zoho CRM)"."Probability (%)" as 'Probability (%)',
+			 "Opportunities (Zoho CRM)"."Stage" as 'Stage',
+			 "Opportunities (Zoho CRM)"."Solar System Size" as 'Solar System Size',
+			 1 as 'Converted Count',
+			 if("Opportunities (Zoho CRM)"."Probability (%)"  = 100, 1, 0) as 'Sales Count',
+			 if("Opportunities (Zoho CRM)"."Probability (%)"  = 100, "Opportunities (Zoho CRM)"."Solar System Size", 0) as 'KWp Sold',
+			 if("Opportunities (Zoho CRM)"."Probability (%)"  = 100, "Opportunities (Zoho CRM)"."Amount", 0) as 'Revenue'
+	FROM  "Contacts (Zoho CRM)"
+LEFT JOIN "Opportunities (Zoho CRM)" ON "Opportunities (Zoho CRM)"."Account Name"  = "Contacts (Zoho CRM)"."Account Name"  
+ 
+) AS  'A' 
+GROUP BY "A"."Lead ID",
+	  "A"."Contact ID" 
+UNION ALL
+ /*amount spent data from xero for internal lead gen*/
+SELECT
+		 null as 'Lead ID',
+		 null as 'Owner',
+		 null as 'Lead Generator',
+		 "Journals - Cash Basis (Xero)"."Journal Date" as 'Lead Created Time',
+		 'Xero' as 'Lead Source',
+		 null as 'Campaigns Name',
+		 'Unknown' as 'Area',
+		 'Internal Lead Gen' as 'Lead Source Filter',
+		 null as 'Converted Time',
+		 null as 'Is Converted?',
+		 null as 'Full Name',
+		 null as 'Contact ID',
+		 null as 'Opportunities ID',
+		 null as 'Opportunities Closing Date',
+		 null as 'Days to Sale',
+		 null as 'Amount',
+		 null as 'Probability (%)',
+		 null as 'Stage',
+		 null as 'Solar System Size',
+		 null as 'Lead Count',
+		 null as 'Converted Count',
+		 null as 'Sales Count',
+		 null as 'KWp Sold',
+		 null as 'Revenue',
+		 "Journals - Cash Basis (Xero)"."Net Amount" as 'Spent',
+		 'Xero' as 'Source'
+FROM  "Journals - Cash Basis (Xero)" 
+WHERE	 "Journals - Cash Basis (Xero)"."Account Name"  = 'Lead Generator Wages'
+ OR	"Journals - Cash Basis (Xero)"."Account Name"  = 'Lead Generator Commission'
+ OR	"Journals - Cash Basis (Xero)"."Account Name"  = 'Lead Data'
+UNION ALL
+ /*amount spent data from facebook ads*/
+SELECT
+		 null as 'Lead ID',
+		 null as 'Owner',
+		 null as 'Lead Generator',
+		 "Campaign Insights (Facebook Ads)"."Reporting Starts" as 'Lead Created Time',
+		 'Facebook' as 'Lead Source',
+		 "Campaign Insights (Facebook Ads)"."Campaign Name" as 'Campaigns Name',
+		 if(is_contains("Campaign Insights (Facebook Ads)"."Campaign Name", 'SA')  = 1, 'SA', if(is_contains("Campaign Insights (Facebook Ads)"."Campaign Name", 'QLD')  = 1, 'QLD', if(is_contains("Campaign Insights (Facebook Ads)"."Campaign Name", 'WA')  = 1, 'WA', 'Unknown'))) as 'Area',
+		 'Facebook' as 'Lead Source Filter',
+		 null as 'Converted Time',
+		 null as 'Is Converted?',
+		 null as 'Full Name',
+		 null as 'Contact ID',
+		 null as 'Opportunities ID',
+		 null as 'Opportunities Closing Date',
+		 null as 'Days to Sale',
+		 null as 'Amount',
+		 null as 'Probability (%)',
+		 null as 'Stage',
+		 null as 'Solar System Size',
+		 null as 'Lead Count',
+		 null as 'Converted Count',
+		 null as 'Sales Count',
+		 null as 'KWp Sold',
+		 null as 'Revenue',
+		 "Campaign Insights (Facebook Ads)"."Amount Spent" as 'Spent',
+		 'Facebook' as 'Source'
+FROM  "Campaign Insights (Facebook Ads)" 
+UNION ALL
+ /*amount spent data from google ads*/
+SELECT
+		 null as 'Lead ID',
+		 null as 'Owner',
+		 null as 'Lead Generator',
+		 "Campaign Performance (Google Ads)"."Day" as 'Lead Created Time',
+		 'Google' as 'Lead Source',
+		 "Campaigns (Google Ads)"."Campaign" as 'Campaigns Name',
+		 if(is_contains("Campaigns (Google Ads)"."Campaign", 'SA')  = 1, 'SA', if(is_contains("Campaigns (Google Ads)"."Campaign", 'QLD')  = 1, 'QLD', if(is_contains("Campaigns (Google Ads)"."Campaign", 'WA')  = 1, 'WA', 'Unknown'))) as 'Area',
+		 'Google' as 'Lead Source Filter',
+		 null as 'Converted Time',
+		 null as 'Is Converted?',
+		 null as 'Full Name',
+		 null as 'Contact ID',
+		 null as 'Opportunities ID',
+		 null as 'Opportunities Closing Date',
+		 null as 'Days to Sale',
+		 null as 'Amount',
+		 null as 'Probability (%)',
+		 null as 'Stage',
+		 null as 'Solar System Size',
+		 null as 'Lead Count',
+		 null as 'Converted Count',
+		 null as 'Sales Count',
+		 null as 'KWp Sold',
+		 null as 'Revenue',
+		 "Campaign Performance (Google Ads)"."Costs" as 'Spent',
+		 'Google' as 'Source'
+FROM  "Campaign Performance (Google Ads)"
+LEFT JOIN "Campaigns (Google Ads)" ON "Campaigns (Google Ads)"."Campaign ID"  = "Campaign Performance (Google Ads)"."Campaign ID"  
+ 
+ 
+ 
