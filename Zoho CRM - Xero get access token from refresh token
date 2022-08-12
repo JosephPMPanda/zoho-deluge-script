@@ -1,0 +1,44 @@
+/** 
+ * Fetch access token from zoho CRM variables
+ */
+xero_tenant_id = zoho.crm.getOrgVariable("xero_tenant_id");
+xero_access_token = zoho.crm.getOrgVariable("xero_access_token");
+xero_refresh_token = zoho.crm.getOrgVariable("xero_refresh_token");
+xero_clientId_and_clientSecret_base64 = zoho.crm.getOrgVariable("xero_clientId_and_clientSecret_base64");
+
+response = invokeurl
+[
+	url :"https://identity.xero.com/connect/token"
+	type :POST
+	parameters:{"grant_type":"refresh_token","refresh_token":xero_refresh_token}
+	headers:{"Authorization":"Basic " + xero_clientId_and_clientSecret_base64,"Content-Type":"application/x-www-form-urlencoded"}
+];
+
+/** 
+ * response if success
+ * {
+ *   "id_token": "...",
+ *   "access_token": "...",
+ *   "expires_in": 1800,
+ *   "token_type": "Bearer",
+ *   "refresh_token": "...",
+ *   "scope": "..."
+ * }
+ *
+ * response if error
+ * {
+ *    "error": "..."
+ * }
+ */
+if(response.get("error") != null)
+{
+	//failed to create access token
+}
+else
+{
+	//save the new access token and refresh token
+	zoho.crm.invokeConnector("crm.set",{"apiname":"xero_access_token","value":response.get("access_token")});
+	zoho.crm.invokeConnector("crm.set",{"apiname":"xero_refresh_token","value":response.get("refresh_token")});
+}
+
+return "";
