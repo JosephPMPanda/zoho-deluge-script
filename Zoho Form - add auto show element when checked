@@ -1,0 +1,24 @@
+<script>
+	  //show or hide element in form
+    function toggleVisibility(eventsender, idOfObjectToToggle) {
+      var myNewState = "none";
+      if (eventsender.checked === true) {
+        myNewState = "flex";
+      }
+
+      document.getElementById(idOfObjectToToggle).style.display = myNewState;
+    }
+</script>
+<form>
+<input id="checkSmsf">
+  .....
+ </form>
+ <script>
+	//show or hide element in form
+let el1 = document.getElementById('checkSmsf');
+let el2 = document.getElementById('checkSoa');
+let el3 = document.getElementById('checkAudit');
+el1.addEventListener('click',(e)=>{toggleVisibility(el1,'smsf')})
+el2.addEventListener('click',(e)=>{toggleVisibility(el2,'soa')})
+el3.addEventListener('click',(e)=>{toggleVisibility(el3,'audit')})
+</script>
