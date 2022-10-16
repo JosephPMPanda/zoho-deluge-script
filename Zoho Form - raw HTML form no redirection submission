@@ -3,11 +3,10 @@
 .....
 </form>
 <script>
-  document.getElementById("test-form").addEventListener("submit", function (e) {
-      fetch('https://forms.zohopublic.com/.../htmlRecords/submit', {
+  let submitForm = function (e){
+    fetch('https://forms.zohopublic.com/.../htmlRecords/submit', {
           method: 'POST',
-          headers: {
-          },
+          headers: {},
           body: new FormData(document.getElementById("test-form"))
       }).then((response) => {
         //do something on success
@@ -16,6 +15,7 @@
           //do something on error
           console.log(error)
         });
-      e.preventDefault();
-  }, false)
+    e.preventDefault();
+  };
+  document.getElementById("test-form").addEventListener("submit", submitForm, false);
 </script>
