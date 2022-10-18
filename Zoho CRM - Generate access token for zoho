@@ -6,6 +6,6 @@ client_secret = "...";
 url_access_token = "https://accounts.zoho.com/oauth/v2/token"+"?refresh_token="+refresh_token+"&client_id="+client_id+"&client_secret="+client_secret+"&grant_type=refresh_token";
 resp = invokeurl [
 	url: url_access_token
-	method: POST
+	type: POST
 ]
 access_token = resp.get("access_token");
