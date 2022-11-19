@@ -1,17 +1,68 @@
+/** 
+ * Checkbox toggler
+ */
 <form>
-  <input id="toggler1" type="checkbox">
-  <div style="display:none" id="elementToToggle1"></div>
-  .....
+  ...
+  <input id="checkboxToggler" type="checkbox">
+  <div style="display:none" id="elementToToggle">...</div>
+  ...
 </form>
 <script>
-  function toggleVisibility(eventsender, idOfObjectToToggle) {
-    var myNewState = "none";
-    if (eventsender.checked === true) {
-      myNewState = "flex";
+  let checkboxToggler = document.getElementById('checkboxToggler');
+  checkboxToggler.addEventListener('click', (e) => {
+    if (checkboxToggler.checked) {
+      document.getElementById('elementToToggle').style.display = "block"
+    } else {
+      document.getElementById('elementToToggle').style.display = "none" 
     }
+  })
+</script>
 
-    document.getElementById(idOfObjectToToggle).style.display = myNewState;
+/** 
+ * Dropdown toggler
+ */
+<form>
+  ...
+  <select id="dropdownToggler">
+    <option selected="true" value="-Select-">-Select-</option>
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+  </select>
+  <div style="display:none" id="elementToToggle">...</div>
+  ...
+</form>
+<script>
+  let dropdownToggler = document.getElementById('dropdownToggler');
+  dropdownToggler.addEventListener('click', (e) => { 
+    if (dropdownToggler.value === "Yes") {
+      document.getElementById('elementToToggle').style.display = "block"
+  } else {
+    document.getElementById('elementToToggle').style.display = "none"
   }
-  let toggler1 = document.getElementById('toggler1');
-  toggler1.addEventListener('click', (e) => { toggleVisibility(toggler1, 'elementToToggle1') })
+  })
+</script>
+
+/** 
+ * radio button toggler
+ */
+<form>
+  ...
+  <input type="radio" id="radioToggler1" name="Radio" value="Yes">...
+  <input type="radio" id="radioToggler2" name="Radio" value="No">...
+  <div style="display:none" id="elementToToggle">...</div>
+  ...
+</form>
+<script>
+  let radioToggler1 = document.getElementById('radioToggler1');
+  let radioToggler2 = document.getElementById('radioToggler2');
+  radioToggler1.addEventListener('change', (e) => {
+      if (radioToggler1.checked) {
+          document.getElementById('elementToToggle').style.display = "block"
+      }
+  })
+  radioToggler2.addEventListener('change', (e) => {
+      if (radioToggler2.checked) {
+          document.getElementById('elementToToggle').style.display = "none"
+      }
+  })
 </script>
