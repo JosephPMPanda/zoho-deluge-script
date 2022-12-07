@@ -1,0 +1,8 @@
+//NOTE: a look up field must be present on both
+// module! otherwise .getValue() will be undefined!
+
+let fieldValue = ZDK.Page.getField("Contact").getValue();
+let contact = ZDK.Apps.CRM.Contacts.fetchById(fieldValue.id);
+
+ZDK.Page.getField("Email").setValue(contact.Email)
+ZDK.Page.getField("Phone").setValue(contact.Phone)
