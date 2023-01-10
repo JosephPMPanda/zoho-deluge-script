@@ -1,10 +1,8 @@
-//list of people assigned for round robin
+//list of user ID assigned for round robin
 sales1 = "1083734000001277002";
-//{"Owner":{"name":"Sanatan Bhaskar","id":"1083734000001277002","email":"sam@superrecords.com.au"}};
 sales2 = "1083734000002033005";
-//{"Owner":{"name":"Atul Upadhyay","id":"1083734000002033005","email":"atul@superrecords.com.au"}};
 sales3 = "1083734000000150025";
-//{"Owner":{"name":"Shisir Barhate","id":"1083734000002033005","email":"shaun@superrecords.com.au"}};
+
 //check last assigned sales then replace the value with the next sales
 last_assigned_sales = zoho.crm.getOrgVariable("smsf_service");
 if(last_assigned_sales = sales1)
@@ -21,7 +19,7 @@ else if(last_assigned_sales = sales3)
 }
 else
 {
-	//to restart the round robin just replace crm variable to any value
+	//to restart the round robin just replace crm variable to value other than defined in user ID
 	zoho.crm.invokeConnector("crm.set",{"apiname":"smsf_service","value":sales1});
 }
 //assign round robin sales
