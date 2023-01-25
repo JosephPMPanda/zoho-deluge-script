@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "f33a803c-d12e-4c8b-94ca-52bb1a11dbf2",
+		"name": "Zoho API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Generate access token and refresh token from grant token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "14215909-c962-44e6-a648-eb826e72afae",
+						"exec": [
+							"let response = pm.response.json();\r",
+							"pm.collectionVariables.set(\"access_token\",response.access_token);\r",
+							"pm.collectionVariables.set(\"refresh_token\",response.refresh_token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "40ecafdb-f0ec-4417-9fa4-14e2cb6ed8fc",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"user-agent": true,
+					"accept": true,
+					"accept-encoding": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://accounts.zoho.com/oauth/v2/token?scope={{scope}}&client_id={{client_id}}&client_secret={{client_secret}}&grant_type=authorization_code&code={{grant_token}}",
+					"protocol": "https",
+					"host": [
+						"accounts",
+						"zoho",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"v2",
+						"token"
+					],
+					"query": [
+						{
+							"key": "scope",
+							"value": "{{scope}}"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code"
+						},
+						{
+							"key": "code",
+							"value": "{{grant_token}}"
+						}
+					]
+				},
+				"description": "first go to [https://api-console.zoho.com](https://api-console.zoho.com) and create a self client.\n\nThen generate a grant token. Copy the grant token to params."
+			},
+			"response": []
+		},
+		{
+			"name": "Generate access token from refresh token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f9a01d78-49d9-4827-bf5c-a73cd9fc7bb1",
+						"exec": [
+							"let response = pm.response.json();\r",
+							"pm.collectionVariables.set(\"access_token\",response.access_token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "2d63c361-d41c-4651-bdb4-2f457ae5f9aa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://accounts.zoho.com/oauth/v2/token?refresh_token={{refresh_token}}&client_id={{client_id}}&client_secret={{client_secret}}&grant_type=refresh_token",
+					"protocol": "https",
+					"host": [
+						"accounts",
+						"zoho",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"v2",
+						"token"
+					],
+					"query": [
+						{
+							"key": "refresh_token",
+							"value": "{{refresh_token}}",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Zoho Analytics export chart data",
+			"_postman_id": "4e7f4a08-9161-41f5-9888-391c03c3421f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disableUrlEncoding": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Zoho-oauthtoken {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "ZANALYTICS-ORGID",
+						"value": "{{org_id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://analyticsapi.zoho.com/restapi/v2/workspaces/{{analytics_workspace_id}}/views/{{oka_team_view_id}}/data?CONFIG=%7BresponseFormat:image,width:764,height:373%7D",
+					"protocol": "https",
+					"host": [
+						"analyticsapi",
+						"zoho",
+						"com"
+					],
+					"path": [
+						"restapi",
+						"v2",
+						"workspaces",
+						"{{analytics_workspace_id}}",
+						"views",
+						"{{oka_team_view_id}}",
+						"data"
+					],
+					"query": [
+						{
+							"key": "CONFIG",
+							"value": "{responseFormat:csv,whatTo:under}",
+							"description": "export underlying data",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "CONFIG",
+							"value": "%7BresponseFormat:image,width:764,height:373%7D",
+							"description": "export image",
+							"type": "text"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f4d1965b-f82d-4186-8820-79301d8cc4bc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2b1167db-09b7-40f2-a4c2-b84de3e14da4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "0ef2b655-f771-469c-b1f0-06f700fa98f8",
+			"key": "client_id",
+			"value": "1000.U09J6KVMSNEMFXT3BK9Y8FJEQCLH4C",
+			"type": "string"
+		},
+		{
+			"id": "ecfb0be3-849b-4db5-a684-5ea296905756",
+			"key": "client_secret",
+			"value": "461f851675b9620c7672dbedb72780155c80ec83df",
+			"type": "string"
+		},
+		{
+			"id": "765b7077-918e-48c4-92c8-2d48f863536b",
+			"key": "grant_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "3b6b120b-5296-44ec-8bbe-fc622ae59909",
+			"key": "scope",
+			"value": "ZohoAnalytics.data.read,ZohoAnalytics.metadata.create,ZohoAnalytics.metadata.read",
+			"type": "string"
+		},
+		{
+			"id": "e0786543-20bb-4f58-b214-c456fe0b696d",
+			"key": "access_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "6e3e5af5-20ea-4fb3-ae21-6b529381eab0",
+			"key": "refresh_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "8cff0e21-ea4d-4c1e-b0c1-458aad65caed",
+			"key": "oka_team_view_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "e78b3cd5-39bf-4b1c-b800-ec55b82a0895",
+			"key": "analytics_workspace_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "60f4bc06-9489-447c-95d4-9a0d2304f93e",
+			"key": "org_id",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
