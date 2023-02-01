@@ -325,55 +325,55 @@
 	],
 	"variable": [
 		{
-			"id": "5504ae69-468d-406a-bb80-343d134b1e2e",
+			"id": "c07f80ce-95b4-441e-8e01-a97c7111ca4b",
 			"key": "client_id",
 			"value": "1000.U09J6KVMSNEMFXT3BK9Y8FJEQCLH4C",
 			"type": "string"
 		},
 		{
-			"id": "b0b0ef44-81cd-4009-a0a4-4363b4097b21",
+			"id": "e51fe3ce-7b03-4943-b5f1-800865f6d5e9",
 			"key": "client_secret",
 			"value": "461f851675b9620c7672dbedb72780155c80ec83df",
 			"type": "string"
 		},
 		{
-			"id": "5484b81f-b542-4337-8820-eddba2b00ac6",
+			"id": "dd542bcc-c0bd-4ee8-ba03-a38417cf5990",
 			"key": "grant_token",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "e053bec7-ea2f-47d8-9f89-511c243d78e3",
+			"id": "f674f103-6cdb-4161-aff3-970ebbc7feb3",
 			"key": "scope",
 			"value": "ZohoAnalytics.data.read,ZohoAnalytics.metadata.create,ZohoAnalytics.metadata.read",
 			"type": "string"
 		},
 		{
-			"id": "edcacb75-ec17-4fa5-b197-d41cea19e729",
+			"id": "54992352-06de-4f94-956c-709f8cb67626",
 			"key": "access_token",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "74420150-9f71-4171-b69b-ecf4aa3371a2",
+			"id": "4bd7ddfe-9143-48e6-9b41-4f9b47ad7d62",
 			"key": "refresh_token",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "aa4bce20-3d2c-4027-bad1-555d019951d1",
+			"id": "00f1fec9-fb5a-4b8f-b573-2cddba200b4c",
 			"key": "oka_team_view_id",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "b6acf811-eb18-4b39-9a2b-168994b07b92",
+			"id": "bb514507-a093-4f1f-9c89-bc5e90f7513e",
 			"key": "analytics_workspace_id",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "117fa480-b9f9-41d5-be34-491c23c893d0",
+			"id": "dcb76602-2b23-473c-971d-bd3f27c6e59a",
 			"key": "org_id",
 			"value": "",
 			"type": "string"
