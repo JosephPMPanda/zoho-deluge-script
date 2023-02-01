@@ -158,7 +158,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://analyticsapi.zoho.com/restapi/v2/workspaces/{{analytics_workspace_id}}/views/{{oka_team_view_id}}/data?CONFIG=%7BresponseFormat:image,width:764,height:373%7D",
+					"raw": "https://analyticsapi.zoho.com/restapi/v2/workspaces/{{analytics_workspace_id}}/views/{{oka_team_view_id}}/data?CONFIG=%7BresponseFormat%3Aimage%2Cwidth%3A%20764%2Cheight%3A%20373%2Ccriteria%3A%20%22date(%5C%22Timesheet%20(Log%20Hours%20Dashboard)%5C%22.%5C%22Log%20Date%5C%22)%3Ddate(start_date_current_week(now()%2C5))%22%7D",
 					"protocol": "https",
 					"host": [
 						"analyticsapi",
@@ -186,7 +186,12 @@
 							"key": "CONFIG",
 							"value": "%7BresponseFormat:image,width:764,height:373%7D",
 							"description": "export image",
-							"type": "text"
+							"disabled": true
+						},
+						{
+							"key": "CONFIG",
+							"value": "%7BresponseFormat%3Aimage%2Cwidth%3A%20764%2Cheight%3A%20373%2Ccriteria%3A%20%22date(%5C%22Timesheet%20(Log%20Hours%20Dashboard)%5C%22.%5C%22Log%20Date%5C%22)%3Ddate(start_date_current_week(now()%2C5))%22%7D",
+							"description": "return last thursday"
 						}
 					]
 				}
@@ -325,55 +330,55 @@
 	],
 	"variable": [
 		{
-			"id": "94d4c884-d02a-40b1-905c-5d041faff9f5",
+			"id": "cd1c8bc3-3992-4956-a9e0-e4f08b64d34e",
 			"key": "client_id",
 			"value": "1000.U09J6KVMSNEMFXT3BK9Y8FJEQCLH4C",
 			"type": "string"
 		},
 		{
-			"id": "4c0ffe68-a68b-4051-a0d1-4dab83a74f6b",
+			"id": "6fb5505a-b876-4581-a3c3-80f7f9b2f8da",
 			"key": "client_secret",
 			"value": "461f851675b9620c7672dbedb72780155c80ec83df",
 			"type": "string"
 		},
 		{
-			"id": "fe3600d5-a9df-47f7-934a-330f6498677c",
+			"id": "e14c3397-15c2-4cc6-8290-cc121d926d94",
 			"key": "grant_token",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "fff3e178-33e1-4567-9df4-70e72a6a2270",
+			"id": "a8d7effa-b861-4188-b8bb-d59d35f65caa",
 			"key": "scope",
 			"value": "ZohoAnalytics.data.read,ZohoAnalytics.metadata.create,ZohoAnalytics.metadata.read",
 			"type": "string"
 		},
 		{
-			"id": "b1f65148-5897-49cc-a756-23779460830b",
+			"id": "cf834323-41a2-4480-8882-4f1f4e035ca0",
 			"key": "access_token",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "11ce292d-e487-468d-ac84-de91cdf734c6",
+			"id": "12c3e312-b8bb-4e30-a6a4-63a842a054a6",
 			"key": "refresh_token",
 			"value": "1000.7dc147e278ad93a467cdad9395d58a2d.28fae9c77c37c633c9b7b07f5135dd27",
 			"type": "string"
 		},
 		{
-			"id": "bc41c2e9-d55c-4cf1-a40b-d20e1cf13b29",
+			"id": "b2bbfff2-53f2-4c06-a427-276e66da2aa2",
 			"key": "oka_team_view_id",
 			"value": "2031795000010703925",
 			"type": "string"
 		},
 		{
-			"id": "1420f2c8-9bb0-4973-83e2-7e38dde5fd7e",
+			"id": "455a1a28-45c4-425d-b280-38ff6347a8f3",
 			"key": "analytics_workspace_id",
 			"value": "2031795000000431001",
 			"type": "string"
 		},
 		{
-			"id": "90cd0b78-816b-48c0-88e3-1c01cff3ca32",
+			"id": "59d67e76-8803-4c07-9c77-8288abf0e62e",
 			"key": "org_id",
 			"value": "695059685",
 			"type": "string"
