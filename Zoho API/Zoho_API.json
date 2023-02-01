@@ -245,8 +245,51 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://www.zohoapis.com.au/crm/v2/functions/sm_send_email/actions/execute?auth_type=apikey&zapikey=1003.d18d007140bc5dee925e9f5783862e25.0d3ba770fd07be0cb68bf26eb73668e5 &recipient=gaura@smartmates.com.au&subject_text=subject postman test01&message_text=message postman test01",
+					"protocol": "https",
+					"host": [
+						"www",
+						"zohoapis",
+						"com",
+						"au"
+					],
+					"path": [
+						"crm",
+						"v2",
+						"functions",
+						"sm_send_email",
+						"actions",
+						"execute"
+					],
+					"query": [
+						{
+							"key": "auth_type",
+							"value": "apikey"
+						},
+						{
+							"key": "zapikey",
+							"value": "1003.d18d007140bc5dee925e9f5783862e25.0d3ba770fd07be0cb68bf26eb73668e5 "
+						},
+						{
+							"key": "recipient",
+							"value": "gaura@smartmates.com.au",
+							"type": "text"
+						},
+						{
+							"key": "subject_text",
+							"value": "subject postman test01",
+							"type": "text"
+						},
+						{
+							"key": "message_text",
+							"value": "message postman test01",
+							"type": "text"
+						}
+					]
+				}
 			},
 			"response": []
 		}
@@ -275,55 +318,55 @@
 	],
 	"variable": [
 		{
-			"id": "771d6892-b6c2-4979-a3e1-7cf79f9956a6",
+			"id": "60bb3b09-7394-4c04-a2ea-9ed1375769f3",
 			"key": "client_id",
 			"value": "1000.U09J6KVMSNEMFXT3BK9Y8FJEQCLH4C",
 			"type": "string"
 		},
 		{
-			"id": "1fe298a6-c8c5-49e2-9177-cdca4ea66a7c",
+			"id": "414ef0d0-98a3-4f0e-9c13-a799fa3adce3",
 			"key": "client_secret",
 			"value": "461f851675b9620c7672dbedb72780155c80ec83df",
 			"type": "string"
 		},
 		{
-			"id": "8f24cfdf-0564-4f0b-b948-81e2f8f60f2c",
+			"id": "cca85008-e622-4052-be70-42526aea1cbc",
 			"key": "grant_token",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "344bfa81-c9a2-4967-912e-ce382a76a3cb",
+			"id": "9f31093f-5ceb-4b03-8187-5a6224429d76",
 			"key": "scope",
 			"value": "ZohoAnalytics.data.read,ZohoAnalytics.metadata.create,ZohoAnalytics.metadata.read",
 			"type": "string"
 		},
 		{
-			"id": "94b347ad-257d-445c-b2ed-ddba2e7b8bce",
+			"id": "cd529919-c232-4d73-aa61-6b047092f246",
 			"key": "access_token",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "897ce3b8-bf50-4981-957f-6617641d5aef",
+			"id": "2c425321-94c3-4853-a03d-3c230335001d",
 			"key": "refresh_token",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "e53db26d-aaf3-449a-bd8e-033a6d1184eb",
+			"id": "6986d488-477a-4a13-9fc9-ee83fb01a73e",
 			"key": "oka_team_view_id",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "837b08df-b48b-4d98-9303-a0630caa7c33",
+			"id": "a33ea634-078e-43f5-b923-483e146ff2cb",
 			"key": "analytics_workspace_id",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "5d3c6635-a44f-420d-b57a-348fe3ebfc18",
+			"id": "5bb69000-7939-49bf-815a-855b76ab9f1b",
 			"key": "org_id",
 			"value": "",
 			"type": "string"
