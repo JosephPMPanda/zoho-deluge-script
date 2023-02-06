@@ -292,73 +292,73 @@
 	],
 	"variable": [
 		{
-			"id": "b40acc65-97e6-4fc6-8c77-aed1a95eaa6c",
+			"id": "213ccb5b-38f9-410e-affb-b69688f64a42",
 			"key": "client_id",
 			"value": "1000.U09J6KVMSNEMFXT3BK9Y8FJEQCLH4C",
 			"type": "string"
 		},
 		{
-			"id": "dbcb86ac-5f93-436c-a104-4d17048606e5",
+			"id": "230eae1a-7930-4d7f-9acc-a183a89bab06",
 			"key": "client_secret",
 			"value": "461f851675b9620c7672dbedb72780155c80ec83df",
 			"type": "string"
 		},
 		{
-			"id": "fd1a70da-c355-4564-a597-0852d0cb58fe",
+			"id": "25ab1793-11c7-4cf3-a291-16cdffaecf29",
 			"key": "grant_token",
 			"value": "1000.7ff01029a3805ad26111da9e4d5d4c50.c102d5dd19f4b7eb541cfea8822bf67c",
 			"type": "string"
 		},
 		{
-			"id": "86ed48c4-5394-4f7c-9fd1-514e984318ab",
+			"id": "91963e74-5c26-4a68-aa7d-a766c9546244",
 			"key": "scope",
 			"value": "ZohoAnalytics.data.read,ZohoAnalytics.metadata.create,ZohoAnalytics.metadata.read",
 			"type": "string"
 		},
 		{
-			"id": "a8a6af79-6c8f-4378-8623-73ad4403cce4",
+			"id": "d22e1226-da62-4572-8dc6-bd1f265b5515",
 			"key": "access_token",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "61d9d1b4-deff-489c-859e-cddf85a262f4",
+			"id": "0a528a77-73aa-4048-b9c7-d768d573703b",
 			"key": "refresh_token",
 			"value": "1000.7dc147e278ad93a467cdad9395d58a2d.28fae9c77c37c633c9b7b07f5135dd27",
 			"type": "string"
 		},
 		{
-			"id": "a1c0875f-cd69-4a61-952b-aed93d01c21f",
+			"id": "1402d7e0-36d4-4d72-9734-d5a822de8ae3",
 			"key": "oka_team_view_id",
 			"value": "2031795000010703925",
 			"type": "string"
 		},
 		{
-			"id": "884ad25c-5752-411f-80cb-5c0ffb684af1",
+			"id": "d82afdf7-9e88-484a-ba5b-e50006729a7e",
 			"key": "analytics_workspace_id",
 			"value": "2031795000000431001",
 			"type": "string"
 		},
 		{
-			"id": "86daeb2c-5279-43b8-ac17-94721350fb55",
+			"id": "28cdd354-dc02-41b8-81ea-056a87162229",
 			"key": "org_id",
 			"value": "695059685",
 			"type": "string"
 		},
 		{
-			"id": "3c3fc152-4864-48d4-a194-5787546e5ace",
+			"id": "92b83566-e83c-4d16-90ef-396f7ccda44a",
 			"key": "scope_project",
 			"value": "ZohoProjects.portals.ALL",
 			"type": "string"
 		},
 		{
-			"id": "864b1608-3015-49f3-811f-0c798de398f3",
+			"id": "a8d4f0d4-e38b-447e-bc90-4599216fd16c",
 			"key": "client_id_project",
 			"value": "1000.NUS64UIX8XB9V0TKZR3K36KDGRJKFJ",
 			"type": "string"
 		},
 		{
-			"id": "c70851a9-5c31-4012-af32-04088f1a1bf1",
+			"id": "f0a24df0-1979-48d2-a41a-0a61fc8a6085",
 			"key": "client_secret_project",
 			"value": "ae76646c67ea218fadf1663b41fc9b85da6e1f97cf",
 			"type": "string"
