@@ -256,7 +256,14 @@
 			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": "{{url_project}}/portals/"
 			},
 			"response": []
 		},
@@ -338,79 +345,79 @@
 	],
 	"variable": [
 		{
-			"id": "e458cc90-2978-4131-b4f9-6181b7f255df",
+			"id": "ce3c456c-76bc-4a70-bae8-65ea976175c2",
 			"key": "client_id",
 			"value": "1000.U09J6KVMSNEMFXT3BK9Y8FJEQCLH4C",
 			"type": "string"
 		},
 		{
-			"id": "e378b858-9b1e-4c6b-ad30-842b7d8d84b7",
+			"id": "5c7093b0-7c96-45ea-b6d0-674814e1aca0",
 			"key": "client_secret",
 			"value": "461f851675b9620c7672dbedb72780155c80ec83df",
 			"type": "string"
 		},
 		{
-			"id": "b1e9dfbf-88a7-4ff7-844f-3920d8ce7b78",
+			"id": "bc4cf2ed-78e0-4a86-87c5-0e7086a42f5f",
 			"key": "grant_token",
 			"value": "1000.d909cec602864add1f1f9be7f7d46a9f.7ffc3670c0809e4c20aed5ebf3ba4fc3",
 			"type": "string"
 		},
 		{
-			"id": "66201a82-bd8b-4bcd-acf9-815937478989",
+			"id": "3526d7c6-13f8-424b-8497-55cb55f8a205",
 			"key": "scope",
 			"value": "ZohoAnalytics.data.read,ZohoAnalytics.metadata.create,ZohoAnalytics.metadata.read",
 			"type": "string"
 		},
 		{
-			"id": "e05af64d-9c5c-4488-a639-1ede14d04a72",
+			"id": "8317da0f-ca97-47ae-a84f-b612330f8aac",
 			"key": "access_token",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "ec40c351-2a8d-45f0-b7de-9a451552ac61",
+			"id": "ad1198e5-2647-42bf-9579-77468e70e199",
 			"key": "refresh_token",
 			"value": "1000.7dc147e278ad93a467cdad9395d58a2d.28fae9c77c37c633c9b7b07f5135dd27",
 			"type": "string"
 		},
 		{
-			"id": "027e2bb2-170b-4629-9f70-d0182850d0a8",
+			"id": "fb8fee48-9fdf-4ad6-a402-7eaf4560fb8d",
 			"key": "oka_team_view_id",
 			"value": "2031795000010703925",
 			"type": "string"
 		},
 		{
-			"id": "29d90f71-2caf-46be-abbc-a2b099ba4c54",
+			"id": "9f250de3-ebf0-491f-9f62-c0ff9f0eefae",
 			"key": "analytics_workspace_id",
 			"value": "2031795000000431001",
 			"type": "string"
 		},
 		{
-			"id": "e2f78e00-b15c-4407-a3dc-81cdecde928a",
+			"id": "e4582643-9a92-40a6-99f7-68470a2a9d33",
 			"key": "org_id",
 			"value": "695059685",
 			"type": "string"
 		},
 		{
-			"id": "9d9da960-f1d5-49ee-84c3-19ef257b175a",
+			"id": "d77fb75b-85da-4842-80c7-d8398a2da027",
 			"key": "scope_project",
 			"value": "ZohoProjects.portals.ALL",
 			"type": "string"
 		},
 		{
-			"id": "2af4c2d3-4ae2-4574-948a-9acd41a6f3da",
+			"id": "123edb64-3e9b-4704-a201-b52c5349201b",
 			"key": "client_id_project",
 			"value": "1000.NUS64UIX8XB9V0TKZR3K36KDGRJKFJ",
 			"type": "string"
 		},
 		{
-			"id": "b37632cc-d96e-494a-bd55-ad270bc01a0e",
+			"id": "97aff3f5-9603-457f-b2cc-85416b188379",
 			"key": "client_secret_project",
 			"value": "ae76646c67ea218fadf1663b41fc9b85da6e1f97cf",
 			"type": "string"
 		},
 		{
-			"id": "7778ad6d-245b-4d74-99d0-bf5d307d3883",
+			"id": "2c681c72-4a63-4746-ae82-4e0b4b0c0634",
 			"key": "url_project",
 			"value": "https://projectsapi.zoho.com/restapi",
 			"type": "string"
