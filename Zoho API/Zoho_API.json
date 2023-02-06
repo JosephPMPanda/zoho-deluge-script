@@ -254,6 +254,18 @@
 				"header": []
 			},
 			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "1adb5142-cbc8-4576-a942-b2cb17f83959",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	],
 	"event": [
@@ -280,55 +292,55 @@
 	],
 	"variable": [
 		{
-			"id": "11628ca8-40d1-40b3-a257-afb05ea117aa",
+			"id": "c1766d59-c6e0-4d0a-896f-164b0138ad72",
 			"key": "client_id",
 			"value": "1000.U09J6KVMSNEMFXT3BK9Y8FJEQCLH4C",
 			"type": "string"
 		},
 		{
-			"id": "945a5b67-4015-4e78-a843-99a0eccc1a05",
+			"id": "68185848-98b3-4138-9e0a-1d7865ea2e6b",
 			"key": "client_secret",
 			"value": "461f851675b9620c7672dbedb72780155c80ec83df",
 			"type": "string"
 		},
 		{
-			"id": "4a83056c-b8ef-458c-b9d4-c0da80785dd5",
+			"id": "0251a45b-bd45-4109-b387-9f1739795008",
 			"key": "grant_token",
 			"value": "1000.bc5656e8d01278d887eca3d5a2f86ad9.71929185d5a640a433688401c0b61a21",
 			"type": "string"
 		},
 		{
-			"id": "fe67b5da-774b-4813-9f53-4f17c550fa4c",
+			"id": "c4fc2f6a-fa1c-4cb4-b072-f3d1701b391a",
 			"key": "scope",
 			"value": "ZohoAnalytics.data.read,ZohoAnalytics.metadata.create,ZohoAnalytics.metadata.read",
 			"type": "string"
 		},
 		{
-			"id": "ec0d506d-59c3-436e-9fd0-ac3fecada34f",
+			"id": "4b70f691-6c12-48dc-a63e-2e589e4a12bf",
 			"key": "access_token",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "a424fd86-63fc-491a-a2b7-98ade9ffeb93",
+			"id": "ebd4b5b6-6cca-4c13-9345-8c639ebbf24e",
 			"key": "refresh_token",
 			"value": "1000.7dc147e278ad93a467cdad9395d58a2d.28fae9c77c37c633c9b7b07f5135dd27",
 			"type": "string"
 		},
 		{
-			"id": "9effa734-b04e-4792-b5cb-452eb70bf31b",
+			"id": "9040db82-6d4a-4076-835f-82cbdb40fd66",
 			"key": "oka_team_view_id",
 			"value": "2031795000010703925",
 			"type": "string"
 		},
 		{
-			"id": "2d88c2c9-bae7-4d1e-a030-14c59b327157",
+			"id": "de465e17-5f15-4cf1-bd9f-03d4319c06bc",
 			"key": "analytics_workspace_id",
 			"value": "2031795000000431001",
 			"type": "string"
 		},
 		{
-			"id": "808f3ddc-7d95-4d18-940d-8c5f47176dac",
+			"id": "aed8db1b-6897-47ad-ae49-0b3cde9b3114",
 			"key": "org_id",
 			"value": "695059685",
 			"type": "string"
