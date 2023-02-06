@@ -272,7 +272,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "cd28c845-ba6e-4ea1-8740-68af79e79926",
+				"id": "cdfb405d-d4c4-4b9f-a218-26528f86b45c",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -282,7 +282,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b1a965c1-2220-432f-914b-d6dea864fc30",
+				"id": "6370f770-88b1-45c9-9a43-a750452cc329",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -292,57 +292,75 @@
 	],
 	"variable": [
 		{
-			"id": "59362975-563b-45f6-8ac9-f0b5371cab75",
+			"id": "e7c5154c-4201-4a35-8e5b-590dfdb13696",
 			"key": "client_id",
 			"value": "1000.U09J6KVMSNEMFXT3BK9Y8FJEQCLH4C",
 			"type": "string"
 		},
 		{
-			"id": "cf1717e5-29b5-456e-a37a-618131b03e29",
+			"id": "5a54ba3f-c5eb-422b-abda-da10e2713b19",
 			"key": "client_secret",
 			"value": "461f851675b9620c7672dbedb72780155c80ec83df",
 			"type": "string"
 		},
 		{
-			"id": "a1ba50dd-86eb-4d27-aeea-d44277765feb",
+			"id": "0d145ca9-3012-4ba7-85fd-1490bf3b323e",
 			"key": "grant_token",
 			"value": "1000.bc5656e8d01278d887eca3d5a2f86ad9.71929185d5a640a433688401c0b61a21",
 			"type": "string"
 		},
 		{
-			"id": "ab272bb4-9eb5-4c81-aba0-d014be4e0101",
+			"id": "65d30618-67c3-4246-a050-2de4157d8b71",
 			"key": "scope",
 			"value": "ZohoAnalytics.data.read,ZohoAnalytics.metadata.create,ZohoAnalytics.metadata.read",
 			"type": "string"
 		},
 		{
-			"id": "15002700-dac7-4ab3-b3c8-8f3ba1e5f4f1",
+			"id": "3477bc4c-e7ce-4deb-a0d9-a037f2c8e57f",
 			"key": "access_token",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "b0a48e89-8c15-44c9-9db6-ae42818545e1",
+			"id": "c3b534f7-bc3d-4a68-a321-77abc002c6df",
 			"key": "refresh_token",
 			"value": "1000.7dc147e278ad93a467cdad9395d58a2d.28fae9c77c37c633c9b7b07f5135dd27",
 			"type": "string"
 		},
 		{
-			"id": "92724b08-4b6b-4479-b7f0-3ec6eae21edb",
+			"id": "ba39d99c-9175-4307-8ee6-1bec32b117ee",
 			"key": "oka_team_view_id",
 			"value": "2031795000010703925",
 			"type": "string"
 		},
 		{
-			"id": "b2b895cc-054b-4e20-af1a-c01731595366",
+			"id": "dd487a87-48bb-4200-8d8e-ed6152bea42a",
 			"key": "analytics_workspace_id",
 			"value": "2031795000000431001",
 			"type": "string"
 		},
 		{
-			"id": "10cb67fd-8b4e-4b6a-8039-34bbf7506a17",
+			"id": "9323e710-13bf-4594-b70a-6a5a007458b8",
 			"key": "org_id",
 			"value": "695059685",
+			"type": "string"
+		},
+		{
+			"id": "685d0d46-45ed-43c7-8d4f-b99fe47daf0f",
+			"key": "scope_project",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "72636c41-bf53-4131-957b-5637184825d4",
+			"key": "client_id_project",
+			"value": "1000.NUS64UIX8XB9V0TKZR3K36KDGRJKFJ",
+			"type": "string"
+		},
+		{
+			"id": "f8f85ccf-59d9-4a04-ab59-ed2546578093",
+			"key": "client_secret_project",
+			"value": "ae76646c67ea218fadf1663b41fc9b85da6e1f97cf",
 			"type": "string"
 		}
 	]
