@@ -163,7 +163,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://analyticsapi.zoho.com/restapi/v2/workspaces/{{analytics_workspace_id}}/views/{{oka_team_view_id}}/data?CONFIG=%7BresponseFormat%3Aimage%2Cwidth%3A%20764%2Cheight%3A%20373%2Ccriteria%3A%20%22date(%5C%22Timesheet%20(Log%20Hours%20Dashboard)%5C%22.%5C%22Log%20Date%5C%22)%3Ddate(start_date_current_week(now()%2C5))%22%7D",
+					"raw": "https://analyticsapi.zoho.com/restapi/v2/workspaces/{{analytics_workspace_id}}/views/{{oka_team_view_id}}/data?CONFIG=%7BresponseFormat%3Aimage%2Cwidth%3A%20764%2Cheight%3A%20373%2Ccriteria%3A%20%22date(%5C%22Timesheet%20(Log%20Hours%20Dashboard)%5C%22.%5C%22Log%20Date%5C%22)%3Ddate(start_date_current_week(now()%2C6))%22%7D",
 					"protocol": "https",
 					"host": [
 						"analyticsapi",
@@ -196,7 +196,13 @@
 						{
 							"key": "CONFIG",
 							"value": "%7BresponseFormat%3Aimage%2Cwidth%3A%20764%2Cheight%3A%20373%2Ccriteria%3A%20%22date(%5C%22Timesheet%20(Log%20Hours%20Dashboard)%5C%22.%5C%22Log%20Date%5C%22)%3Ddate(start_date_current_week(now()%2C5))%22%7D",
-							"description": "return last thursday"
+							"description": "return last thursday",
+							"disabled": true
+						},
+						{
+							"key": "CONFIG",
+							"value": "%7BresponseFormat%3Aimage%2Cwidth%3A%20764%2Cheight%3A%20373%2Ccriteria%3A%20%22date(%5C%22Timesheet%20(Log%20Hours%20Dashboard)%5C%22.%5C%22Log%20Date%5C%22)%3Ddate(start_date_current_week(now()%2C6))%22%7D",
+							"description": "return last friday"
 						}
 					]
 				}
@@ -345,79 +351,79 @@
 	],
 	"variable": [
 		{
-			"id": "ce3c456c-76bc-4a70-bae8-65ea976175c2",
+			"id": "c3511466-7c72-4dd1-9299-009cd765a44d",
 			"key": "client_id",
 			"value": "1000.U09J6KVMSNEMFXT3BK9Y8FJEQCLH4C",
 			"type": "string"
 		},
 		{
-			"id": "5c7093b0-7c96-45ea-b6d0-674814e1aca0",
+			"id": "88845530-04fb-4e5e-ab32-b55a54a3a771",
 			"key": "client_secret",
 			"value": "461f851675b9620c7672dbedb72780155c80ec83df",
 			"type": "string"
 		},
 		{
-			"id": "bc4cf2ed-78e0-4a86-87c5-0e7086a42f5f",
+			"id": "9700894b-8300-4e9d-b469-60a3c73bfdbc",
 			"key": "grant_token",
 			"value": "1000.d909cec602864add1f1f9be7f7d46a9f.7ffc3670c0809e4c20aed5ebf3ba4fc3",
 			"type": "string"
 		},
 		{
-			"id": "3526d7c6-13f8-424b-8497-55cb55f8a205",
+			"id": "ee3a1b46-d4ac-45bd-b55e-cad5ada41fc8",
 			"key": "scope",
 			"value": "ZohoAnalytics.data.read,ZohoAnalytics.metadata.create,ZohoAnalytics.metadata.read",
 			"type": "string"
 		},
 		{
-			"id": "8317da0f-ca97-47ae-a84f-b612330f8aac",
+			"id": "a5ab09e0-f8f1-4b87-ba17-1db5bcc5e9be",
 			"key": "access_token",
 			"value": "",
 			"type": "string"
 		},
 		{
-			"id": "ad1198e5-2647-42bf-9579-77468e70e199",
+			"id": "21107ae1-2ed0-4354-8174-b1b6349fa176",
 			"key": "refresh_token",
 			"value": "1000.7dc147e278ad93a467cdad9395d58a2d.28fae9c77c37c633c9b7b07f5135dd27",
 			"type": "string"
 		},
 		{
-			"id": "fb8fee48-9fdf-4ad6-a402-7eaf4560fb8d",
+			"id": "fa35459e-226f-45dd-ae5b-8cc5483877f5",
 			"key": "oka_team_view_id",
 			"value": "2031795000010703925",
 			"type": "string"
 		},
 		{
-			"id": "9f250de3-ebf0-491f-9f62-c0ff9f0eefae",
+			"id": "8a2a7adb-92de-49f6-9f3d-1303677c215d",
 			"key": "analytics_workspace_id",
 			"value": "2031795000000431001",
 			"type": "string"
 		},
 		{
-			"id": "e4582643-9a92-40a6-99f7-68470a2a9d33",
+			"id": "4c734311-8a39-4115-995a-659fed83a9c1",
 			"key": "org_id",
 			"value": "695059685",
 			"type": "string"
 		},
 		{
-			"id": "d77fb75b-85da-4842-80c7-d8398a2da027",
+			"id": "14c4f2ce-f754-4322-9135-b7ba75fa2b43",
 			"key": "scope_project",
 			"value": "ZohoProjects.portals.ALL",
 			"type": "string"
 		},
 		{
-			"id": "123edb64-3e9b-4704-a201-b52c5349201b",
+			"id": "b6d5554e-619d-4f2c-90a0-192b7a7d7632",
 			"key": "client_id_project",
 			"value": "1000.NUS64UIX8XB9V0TKZR3K36KDGRJKFJ",
 			"type": "string"
 		},
 		{
-			"id": "97aff3f5-9603-457f-b2cc-85416b188379",
+			"id": "8524c661-c847-4261-9c9e-c10c1d1e420c",
 			"key": "client_secret_project",
 			"value": "ae76646c67ea218fadf1663b41fc9b85da6e1f97cf",
 			"type": "string"
 		},
 		{
-			"id": "2c681c72-4a63-4746-ae82-4e0b4b0c0634",
+			"id": "df4c9e14-ea66-4d25-8a83-0e1ce2369e3a",
 			"key": "url_project",
 			"value": "https://projectsapi.zoho.com/restapi",
 			"type": "string"
