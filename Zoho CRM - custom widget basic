@@ -1,0 +1,47 @@
+// the root file when uploading the widget is the html name that is in /app
+//
+//html file
+//
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://live.zwidgets.com/js-sdk/1.1/ZohoEmbededAppSDK.min.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <button onclick=execute_crm_custom_function>Submit</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+//
+//script.js
+//
+const execute_crm_custom_function = () => {
+    ZOHO.CRM.FUNCTIONS.execute("custom_function_name", { "custom_function_input_1": var1, "custom_function_input_2": var2})
+        .then(()=>{
+            //do something after execution
+        })
+}
+
+ZOHO.embeddedApp.on("PageLoad", function (data) {
+    console.log(JSON.stringify(data));
+    for (let id in data.EntityId) {
+        // console.log(`id = ${id}`);
+        // get record
+        // console.log(`data.EntityId[id] = ${data.EntityId[id]}`)
+        ZOHO.CRM.API.getRecord({ Entity: "Contacts", RecordID: data.EntityId[id] }).then(function (contactData) {
+            // console.log(contactData)
+            document.getElementById("recipient").innerHTML += contactData.data[0].Email
+            email_recipient += contactData.data[0].Email + ","
+            document.getElementById("recipient").innerHTML += "<br>"
+        })
+
+    }
+})
+
+ZOHO.embeddedApp.init()
+
