@@ -1,4 +1,7 @@
-//submit form using AJAX to prevent redirection
+To submit embeded zoho form without redirection to thank you page we can use AJAX when submitting the form.
+
+
+```
 <form id="test-form">
 .....
 </form>
@@ -19,3 +22,4 @@
   };
   document.getElementById("test-form").addEventListener("submit", submitForm, false);
 </script>
+```
