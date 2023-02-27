@@ -1,3 +1,8 @@
+The refresh token must already generated in another way first
+
+To generate a new access token from refresh token
+
+```
 refresh_token = "...";
 client_id = "...";
 client_secret = "...";
@@ -9,3 +14,4 @@ resp = invokeurl [
 	type: POST
 ]
 access_token = resp.get("access_token");
+```
