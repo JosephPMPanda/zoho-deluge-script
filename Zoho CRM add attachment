@@ -1,3 +1,0 @@
-lead_record = zoho.crm.getRecordById("Leads",lId);
-signed_doc = zoho.sign.downloadDocument(lead_record.get("Request_ID"));
-resp = zoho.crm.attachFile("Leads",lId,signedDoc);

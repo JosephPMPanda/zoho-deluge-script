@@ -1,3 +1,0 @@
-subform_1_value = ZDK.Page.getForm().getValues().Subform_1
-ZDK.Page.getForm().setValues({"Subform_2": [] }) //reset form to prevent missing row
-ZDK.Page.getForm().setValues({"Subform_2": subform_1_value })
