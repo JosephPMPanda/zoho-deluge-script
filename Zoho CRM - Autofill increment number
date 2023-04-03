@@ -1,9 +1,0 @@
- /**
- * Fetch the last biggest project number from a module
- * then display it on record creation
- */
-let project_number = ZDK.Apps.CRM.Module_name.fetch(1, 1 ,"hidden_field_to_track", "desc");
-let last_project_number = project_number[0]._hidden_field_to_track;
-let next_project_number = parseInt(last_project_number, 10) + 1;
-let project_number_to_display = "SM-" + next_project_number;
-ZDK.Page.getField("Project_Number").setValue(project_number_to_display);
