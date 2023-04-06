@@ -22,6 +22,8 @@ documenting all deluge script I've known because Zoho documentations are confusi
   - [Auto Show Element When Checked](#auto-show-element-when-checked)
   - [Captha With Client Side Validation](#captha-with-client-side-validation)
   - [RAW HTML No Redirection Submission](#raw-html-no-redirection-submission)
+- [Zoho Workdrive](#zoho-workdrive)
+  - [Attach image in HTML](#attach-image-in-html)
 
 # Zoho CRM
 ## Autofill Increment Number
@@ -682,4 +684,14 @@ To submit embeded zoho form without redirection to thank you page we can use AJA
   };
   document.getElementById("test-form").addEventListener("submit", submitForm, false);
 </script>
+```
+# Zoho Workdrive
+
+## Attach Image In HTML
+
+To attach image uploaded image in Zoho Workdrive in HTML, first create external share link. Then, add `/download?directDownload=true` onto the link
+
+example below
+```
+<img src="https://workdrive.zohopublic.com.au/external/xxxxxxx/download?directDownload=true">
 ```
